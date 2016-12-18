@@ -7,10 +7,10 @@ const fuseBox = new fsbx.FuseBox({
     homeDir: 'src/',
     sourceMap: {
         bundleReference: 'app.js.map',
-        outFile: './build/app.js.map',
+        outFile: './dist/app.js.map',
     },
     cache: true,
-    outFile: './build/app.js',
+    outFile: './dist/app.js',
     plugins: [
         fsbx.TypeScriptHelpers(),
         fsbx.JSONPlugin,
@@ -18,14 +18,14 @@ const fuseBox = new fsbx.FuseBox({
     ]
 });
 
-gulp.task('build', () => {
+gulp.task('ts', () => {
     return fuseBox.bundle('>main.ts');
 });
-gulp.task('view', () => {
-    gulp.src('src/index.html').pipe(gulp.dest('build'));
+gulp.task('html', () => {
+    gulp.src('src/index.html').pipe(gulp.dest('dist'));
 });
-gulp.task('default', ['build', 'view'], () => {
-    gulp.watch('src/**/*.ts', ['build']);
-    gulp.watch('src/index.html', ['view']);
-    connect.server({ root: 'build', port: 3000 });
+gulp.task('default', ['ts', 'html'], () => {
+    gulp.watch('src/**/*.ts', ['ts']);
+    gulp.watch('src/index.html', ['html']);
+    connect.server({ root: 'dist', port: 3000 });
 });
