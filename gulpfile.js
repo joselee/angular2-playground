@@ -1,7 +1,7 @@
 'use strict';
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 const fsbx = require('fuse-box');
+const connect = require('gulp-connect');
 
 const fuseBox = new fsbx.FuseBox({
     homeDir: 'src/',
@@ -21,8 +21,11 @@ const fuseBox = new fsbx.FuseBox({
 gulp.task('build', () => {
     return fuseBox.bundle('>main.ts');
 });
-gulp.task('default', ['build'], () => {
-    gulp.watch('src/**/*.ts', () => {
-        runSequence('build');
-    });
+gulp.task('view', () => {
+    gulp.src('src/index.html').pipe(gulp.dest('build'));
+});
+gulp.task('default', ['build', 'view'], () => {
+    gulp.watch('src/**/*.ts', ['build']);
+    gulp.watch('src/index.html', ['view']);
+    connect.server({ root: 'build', port: 3000 });
 });
