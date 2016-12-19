@@ -1,14 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Todo} from './todo.model';
+import { Component, OnInit } from '@angular/core';
+import { Todo } from './todo.model';
 
 @Component({
     selector: 'todo-list',
-    styles: [`
-        .done {
-            text-decoration: line-through;
-        }
-  `],
-   template: require('~/todo/todo-list.component.html')
+    template: require('~/todo/todo-list.component.html')
 })
 export class TodoListComponent implements OnInit {
     todos: Todo[];
@@ -31,8 +26,8 @@ export class TodoListComponent implements OnInit {
         ];
         this.resetNewTodo();
     }
-    onKeyUp(e:any) {
-        if(e.keyCode === 13) {
+    onKeyUp(e: any) {
+        if (e.keyCode === 13) {
             this.todos.push(this.newTodo);
             this.resetNewTodo();
         }

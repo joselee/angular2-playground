@@ -1,0 +1,9 @@
+.todo-item {
+    .todo-item-name:hover, .todo-item-checkbox:hover {
+        cursor: pointer;
+    }
+
+    .todo-item-name.done {
+        text-decoration: line-through;
+    }
+}
