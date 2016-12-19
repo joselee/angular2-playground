@@ -8,16 +8,7 @@ import {Todo} from './todo.model';
             text-decoration: line-through;
         }
   `],
-    template: 
-    `<div class="todo-list">
-        <input type="text" placeholder="new todo" [(ngModel)]="newTodo.name" (keyup)="onKeyUp($event)" />
-        <div *ngFor="let todo of todos">
-            <label>
-                <input type="checkbox" [(ngModel)]="todo.done" />
-                <span [ngClass]="{done: todo.done}">{{todo.name}}</span>
-            </label>
-        </div>
-     </div>`
+   template: require('~/todo/todo-list.component.html')
 })
 export class TodoListComponent implements OnInit {
     todos: Todo[];
