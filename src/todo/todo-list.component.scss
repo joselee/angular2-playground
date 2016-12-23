@@ -1,9 +1,8 @@
-.todo-item {
-    .todo-item-name:hover, .todo-item-checkbox:hover {
-        cursor: pointer;
-    }
+.todo-list {
+    margin: 40px auto;
+    max-width: 600px;
+}
 
-    .todo-item-name.done {
-        text-decoration: line-through;
-    }
+.full-width {
+    width: 100%;
 }

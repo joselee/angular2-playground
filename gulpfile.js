@@ -16,7 +16,7 @@ const fuseBox = new fsbx.FuseBox({
     cache: true,
     outFile: './dist/app.js',
     plugins: [
-        fsbx.TypeScriptHelpers(),
+        fsbx.TypeScriptHelpers,
         fsbx.JSONPlugin,
         fsbx.HTMLPlugin({ useDefault: false })
     ]
@@ -26,7 +26,7 @@ gulp.task('ts', () => {
     return fuseBox.bundle('>main.ts');
 });
 gulp.task('sass', () => {
-    return gulp.src('src/**/*.scss')
+    return gulp.src('src/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(rename('app.css'))

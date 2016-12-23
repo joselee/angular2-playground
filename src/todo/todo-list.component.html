@@ -1,12 +1,11 @@
-<div class="todo-list">
-    <input type="text"
-           placeholder="Add a new todo!"
-           [(ngModel)]="newTodo.name"
-           (keyup)="onKeyUp($event)" />
+<md-card class="todo-list">
+    <md-input-container class="full-width">
+        <input md-input
+               placeholder="New todo"
+               [(ngModel)]="newTodo.name"
+               (keyup)="onKeyUp($event)">
+    </md-input-container>
     <div class="todo-item" *ngFor="let todo of todos">
-        <label>
-            <input class="todo-item-checkbox" type="checkbox" [(ngModel)]="todo.done" />
-            <span class="todo-item-name" [ngClass]="{done: todo.done}">{{todo.name}}</span>
-        </label>
+        <md-checkbox [(ngModel)]="todo.done">{{todo.name}}</md-checkbox>
     </div>
-</div>
+</md-card>
