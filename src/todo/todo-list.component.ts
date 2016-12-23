@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform, Injectable } from '@angular/core';
 import { Todo } from './todo.model';
 
 @Component({
@@ -34,5 +34,18 @@ export class TodoListComponent implements OnInit {
     }
     resetNewTodo() {
         this.newTodo = new Todo('', false);
+    }
+}
+
+
+//http://stackoverflow.com/questions/34164413/how-to-apply-filters-to-ngfor
+@Pipe({
+    name: 'filterTodos'
+})
+@Injectable()
+export class FilterPipe implements PipeTransform {
+    transform(items: any[], filterName: string): any[] {  
+        console.log(items, filterName);
+        return [];
     }
 }
