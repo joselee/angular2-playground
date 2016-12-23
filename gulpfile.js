@@ -12,7 +12,7 @@ const fuseBox = new fsbx.FuseBox({
     cache: true,
     outFile: './dist/app.js',
     plugins: [
-        fsbx.TypeScriptHelpers(),
+        fsbx.TypeScriptHelpers,
         fsbx.JSONPlugin,
         fsbx.HTMLPlugin({useDefault: false})
     ]
