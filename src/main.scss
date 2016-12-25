@@ -1,2 +1,6 @@
-@import '../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.scss';
+@import '../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
 @import 'todo/todo-list.component';
+
+body {
+    background-color: #eee;
+}

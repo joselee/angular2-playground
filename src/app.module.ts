@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material/bundles/material.umd';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todo-list.component';
+import { TodoFilter } from './todo/todo-filter.pipe';
 
 @NgModule({
     imports: [ BrowserModule, FormsModule, MaterialModule.forRoot() ],
-    declarations: [ AppComponent, TodoListComponent ],
+    declarations: [ AppComponent, TodoListComponent, TodoFilter ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {}
