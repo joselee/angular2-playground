@@ -1,10 +1,7 @@
 .center-card {
     margin: 0 auto 20px;
     max-width: 600px;
-
-    &:first-child {
-        margin-top: 40px;
-    }
+    box-sizing: border-box;
 }
 
 .full-width {
