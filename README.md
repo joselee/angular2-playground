@@ -1,8 +1,9 @@
-# angular2-playground
-Most basic setup of Angular2 with fuse-box.
-Keep branch master as a basic project seed for other branches!
+### Angular 2 boilerplate
+This project boilerplate is based on the example provided by John Papa in the course 'Angular 2 first look'.
 
-## install and run
-* npm install
-* gulp
-* open index.html in browser
+The full list of examples from the course can be found at: http://angular2-first-look.azurewebsites.net/ 
+
+No pre-transpilation or bundling happens at all. Typescript gets compiled in the browser.
+
+#### Setup
+Run an http-server from the root directory

@@ -1,0 +1,9 @@
+<h1 class="main-title">TODOS</h1>
+<div class="todo-list">
+    <div *ngFor="let todo of todos">
+        <label>
+            <input type="checkbox" [(ngModel)]="todo.done" />
+            {{todo.name}}
+        </label>
+    </div>
+</div>
