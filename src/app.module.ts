@@ -5,11 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material/bundles/material.umd';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todo-list.component';
+import { TodoService } from './todo/todo.service';
 import { TodoFilter } from './todo/todo-filter.pipe';
 
 @NgModule({
-    imports: [ BrowserModule, FormsModule, MaterialModule.forRoot() ],
-    declarations: [ AppComponent, TodoListComponent, TodoFilter ],
-    bootstrap: [ AppComponent ]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        MaterialModule.forRoot()
+    ],
+    declarations: [
+        AppComponent,
+        TodoListComponent,
+        TodoFilter
+    ],
+    providers: [TodoService],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

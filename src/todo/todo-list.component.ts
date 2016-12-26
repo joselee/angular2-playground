@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { TodoService } from './todo.service';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Todo } from './todo.model';
 
 @Component({
@@ -10,22 +11,11 @@ export class TodoListComponent implements OnInit {
     newTodo: Todo;
     todoLists: string[];
 
+    constructor( @Inject(TodoService) private todoService: TodoService) {}
+
     ngOnInit() {
         this.todoLists = ['All', 'Pending', 'Done'];
-        this.todos = [
-            {
-                name: 'foo',
-                done: false
-            },
-            {
-                name: 'bar',
-                done: false
-            },
-            {
-                name: 'derp',
-                done: false
-            }
-        ];
+        this.todos = this.todoService.getTodos();
         this.resetNewTodo();
     }
     onKeyUp(e: any) {
