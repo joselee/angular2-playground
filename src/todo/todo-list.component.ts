@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import { TodoService } from './todo.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Todo } from './todo.model';
@@ -26,5 +27,17 @@ export class TodoListComponent implements OnInit {
     }
     resetNewTodo() {
         this.newTodo = new Todo('', false);
+    }
+    deleteTodo(todo: Todo) {
+        const index = this.todos.indexOf(todo);
+        if(index !== -1) {
+            this.todos.splice(index, 1);
+        }
+    }
+    shouldShowClearAll() {
+        return _.some(this.todos, {done: true});
+    }
+    clearAllDone() {
+        this.todos = _.filter(this.todos, t => !t.done);
     }
 }

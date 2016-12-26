@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo/todo-list.component';
 import { TodoService } from './todo/todo.service';
 import { TodoFilter } from './todo/todo-filter.pipe';
+import { TodoItemComponent } from './todo/todo-item.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { TodoFilter } from './todo/todo-filter.pipe';
     declarations: [
         AppComponent,
         TodoListComponent,
-        TodoFilter
+        TodoFilter,
+        TodoItemComponent
     ],
     providers: [TodoService],
     bootstrap: [AppComponent]

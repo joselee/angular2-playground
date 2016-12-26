@@ -1,3 +1,4 @@
+<h1 class="main-title">Fuse-box NG2 Todo</h1>
 <md-card class="center-card">
     <md-input-container class="full-width">
         <input md-input
@@ -8,11 +9,17 @@
 </md-card>
 
 <md-card class="center-card padding-none">
-    <md-tab-group>
-        <md-tab *ngFor="let listName of todoLists" label="{{listName}}">
-            <div class="todo-item" *ngFor="let todo of todos | todoFilter: listName">
-                <md-checkbox [(ngModel)]="todo.done">{{todo.name}}</md-checkbox>
-            </div>
-        </md-tab>
-    </md-tab-group>
+    <md-card-content>
+        <md-tab-group>
+            <md-tab *ngFor="let listName of todoLists" label="{{listName}}">
+                    <todo-item [todo]="todo"
+                            (deleteTodo)="deleteTodo($event)"
+                            *ngFor="let todo of todos | todoFilter: listName">
+                    </todo-item>
+            </md-tab>
+        </md-tab-group>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center" *ngIf="shouldShowClearAll()">
+        <button md-button (click)="clearAllDone()">Clear all done</button>
+    </md-card-actions>
 </md-card>

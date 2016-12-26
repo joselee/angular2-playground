@@ -1,17 +1,9 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
 @import 'todo/todo-list.component';
+@import 'todo/todo-item.component';
 
 body {
     background-color: #eee;
-}
-.main-title {
-    text-align: center;
-    font-size: 45px;
     font-family: Roboto,"Helvetica Neue",sans-serif;
-    margin-bottom: 10px;
-    opacity: 0.3;
-
-    @media (max-width: 400px) {
-        font-size: 25px;
-    }
 }
