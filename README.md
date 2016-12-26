@@ -1,7 +1,8 @@
-# angular2-playground
-Simple Todo app with Angular2 and fuse-box.
+### Angular 2 boilerplate
+This project boilerplate uses fuse-box.
 
-## install and run
+It bundles all app code and dependencies to one file using gulp.
+
+#### Setup
 * npm install
 * gulp
-
