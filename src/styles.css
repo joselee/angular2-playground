@@ -1,0 +1,6 @@
+@import 'todos/todo-list.component.css';
+
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+}

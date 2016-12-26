@@ -1,17 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "isolatedModules": false,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "declaration": true,
-        "noImplicitAny": true,
-        "noImplicitUseStrict": false,
-        "strictNullChecks": true,
-        "noEmitHelpers": true,
-        "noLib": false,
-        "ourDir": "dist/"
-    }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "outFile": "dist/app.js"
+  }
 }

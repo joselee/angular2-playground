@@ -1,8 +1,10 @@
-# angular2-playground
-Most basic setup of Angular2 with fuse-box.
-Keep branch master as a basic project seed for other branches!
+### Angular 2 boilerplate
+This project boilerplate is based on the official quickstart project at angular.io.
 
-## install and run
+It uses npm to run tsc to transpile the app bundle to a single file in the dist directory.
+
+Library imports will still get fetched individually, because dependencies are not bundled.
+
+#### Setup
 * npm install
-* gulp
-* open index.html in browser
+* npm start
