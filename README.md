@@ -3,6 +3,6 @@ This project boilerplate uses fuse-box.
 
 It bundles all app code and dependencies to one file using gulp.
 
-#### Setup
+#### Setup and run
 * npm install
-* gulp
+* npm start
