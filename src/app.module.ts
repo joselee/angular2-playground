@@ -1,12 +1,15 @@
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { TodoListComponent } from './todos/todo-list.component';
-import { TodoService } from './todos/todo.service';
 
 import { AppComponent } from './app.component';
+import { TodoListComponent } from './todo/todo-list.component';
+import { TodoItemComponent } from './todo/todo-item.component';
+import { TodoFilter } from './todo/todo-filter.pipe';
+import { TodoService } from './todo/todo.service';
+
 
 @NgModule({
     imports: [
@@ -17,7 +20,9 @@ import { AppComponent } from './app.component';
     ],
     declarations: [
         AppComponent,
-        TodoListComponent
+        TodoListComponent,
+        TodoItemComponent,
+        TodoFilter
     ],
     providers: [TodoService],
     bootstrap: [AppComponent]

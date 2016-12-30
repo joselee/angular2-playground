@@ -40,10 +40,10 @@ gulp.task('ts', () => {
 });
 gulp.task('sass', () => {
     return gulp.src('src/main.scss')
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('app.css'))
-        .pipe(sourcemaps.write('.'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('build'));
 });
 
