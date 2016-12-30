@@ -1,8 +1,4 @@
-/**
- * System configuration for Angular samples
- * Adjust as necessary for your application needs.
- */
-(function (global) {
+(function () {
     System.config({
         paths: {
             // paths serve as alias
@@ -11,7 +7,7 @@
         // map tells the System loader where to look for things
         map: {
             // our app is within the app folder
-            app: 'dist', // EDITED
+            app: 'build',
 
             // angular bundles
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -26,15 +22,24 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+
+            // shims
+            'core-js-shim': 'npm:core-js/client/shim.min.js',
+            'zone': 'npm:zone.js/dist/zone.js',
+            'reflect': 'npm:reflect-metadata/Reflect.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
             app: {
-                main: './app.js',
+                main: './main.js',
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'angular2-in-memory-web-api': {
+                main: './index.js',
                 defaultExtension: 'js'
             }
         }

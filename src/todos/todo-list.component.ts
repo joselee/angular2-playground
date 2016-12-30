@@ -4,7 +4,7 @@ import { Todo } from './todo';
 
 @Component({
     selector: 'todo-list',
-    templateUrl: 'src/todos/todo-list.component.html',
+    templateUrl: './todo-list.component.html',
 })
 export class TodoListComponent implements OnInit {
     todos: Todo[];

@@ -3,7 +3,7 @@
     <div *ngFor="let todo of todos">
         <label>
             <input type="checkbox" [(ngModel)]="todo.done" />
-            {{todo.name}}
+            <span>{{todo.name}}</span>
         </label>
     </div>
 </div>
