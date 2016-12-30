@@ -13,7 +13,7 @@ const browserSync = require('browser-sync').create();
 
 /* --- Production build tasks --- */
 gulp.task('prod', ['build'], () => {
-    return gulp.start(['prod-index', 'prod-css', 'prod-js']);
+    return gulp.start(['prod-index', 'prod-css', 'prod-js', 'prod-api']);
 });
 gulp.task('prod-js', () => {
     return builder.buildStatic('build/main.js', './dist/app.js', { minify: true });
@@ -25,7 +25,11 @@ gulp.task('prod-css', () => {
 gulp.task('prod-index', () => {
     return gulp.src('index.html')
         .pipe(htmlreplace({ js: 'app.js', css: 'app.css' }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('prod-api', () => {
+    return gulp.src('api/*.*')
+        .pipe(gulp.dest('dist/api'));
 });
 
 

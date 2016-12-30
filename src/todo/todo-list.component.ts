@@ -11,12 +11,15 @@ export class TodoListComponent implements OnInit {
     todos: Todo[];
     newTodo: Todo;
     todoLists: string[];
+    errorMessage: string;
 
-    constructor( @Inject(TodoService) private todoService: TodoService) {}
+    constructor( @Inject(TodoService) private todoService: TodoService) { }
 
     ngOnInit() {
         this.todoLists = ['All', 'Pending', 'Done'];
-        this.todos = this.todoService.getTodos();
+        this.todoService.getTodos().subscribe(
+            todos => this.todos = todos,
+            error => this.errorMessage = <string>error);
         this.resetNewTodo();
     }
     onKeyUp(e: any) {
@@ -30,12 +33,12 @@ export class TodoListComponent implements OnInit {
     }
     deleteTodo(todo: Todo) {
         const index = this.todos.indexOf(todo);
-        if(index !== -1) {
+        if (index !== -1) {
             this.todos.splice(index, 1);
         }
     }
     shouldShowClearAll() {
-        return _.some(this.todos, {done: true});
+        return _.some(this.todos, { done: true });
     }
     clearAllDone() {
         this.todos = _.filter(this.todos, t => !t.done);
