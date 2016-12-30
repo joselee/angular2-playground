@@ -1,0 +1,1 @@
+This `api/` folder is a mock-backend for dummy data. It's used by the example app with the http service. Delete this folder for real implementations.
