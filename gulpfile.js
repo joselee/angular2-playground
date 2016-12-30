@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const clean = require('gulp-clean');
 const htmlreplace = require('gulp-html-replace');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
@@ -23,13 +24,17 @@ gulp.task('prod-css', () => {
 });
 gulp.task('prod-index', () => {
     return gulp.src('index.html')
-        .pipe(htmlreplace({js: 'app.js', css: 'app.css'}))
+        .pipe(htmlreplace({ js: 'app.js', css: 'app.css' }))
         .pipe(gulp.dest('./dist'));
 });
 
 
 /* --- Core build tasks --- */
 gulp.task('build', ['ts', 'sass']);
+gulp.task('clean', () => {
+    return gulp.src(['build', 'dist'], { read: false })
+        .pipe(clean());
+});
 gulp.task('ts', () => {
     return gulp.src('src/**/*.ts')
         .pipe(embedTemplates({ sourceType: 'ts' }))
@@ -40,10 +45,8 @@ gulp.task('ts', () => {
 });
 gulp.task('sass', () => {
     return gulp.src('src/main.scss')
-        // .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('app.css'))
-        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('build'));
 });
 
