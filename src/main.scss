@@ -7,3 +7,15 @@ body {
     background-color: #eee;
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
+
+.main-title {
+    text-align: center;
+    font-size: 45px;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    margin-bottom: 10px;
+    opacity: 0.3;
+
+    @media (max-width: 400px) {
+        font-size: 25px;
+    }
+}
